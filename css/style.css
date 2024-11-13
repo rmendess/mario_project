@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: url(../images/fundo\ 2.PNG);
+    background-size: contain;
+    animation: background-slide 60s linear infinite;
+}
+
+.background-stop {
+    animation: none;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 3s infinite linear;
+}
+
+.plant {
+    position: absolute;
+    bottom: 0px;
+    width: 80px;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.plant-animation {
+    animation: plant-animation 3s infinite linear;
+}
+
+.bullet {
+    position: absolute;
+    bottom: -4px;
+    width: 110px;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.bullet-animation {
+    animation: bullet-animation 3s infinite linear
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.luigi {
+    width: 110px;
+    margin-top: 80px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.luigi-animation {
+    animation: luigi-animation 6s linear forwards;
+}
+
+.koopa {
+    width: 285px;
+    margin-top: 85px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.koopa-animation {
+    animation: koopa-animation 8s linear forwards;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    margin-top: 70px;
+    position: absolute;
+    width: 600px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.bush {
+    bottom: 0px;
+    position: absolute;
+    width: 280px;
+    animation: bush-animation 4s infinite linear
+}
+
+.tree {
+    position: absolute;
+    width: 160px;
+    bottom: 0px;
+    animation: tree-animation 4.1s infinite linear
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 2rem;
+    color: white;
+    font-family: 'FontMario', sans-serif;
+}
+
+.modal {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 300px;
+    height: 150px;
+
+}
+
+#restart-button {
+    padding: 10px 20px;
+    background-color: #009CDA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-family: 'FontMario', sans-serif;
+    font-size: 15px;
+}
+
+#restart-button:hover {
+    background-color: #E71E07;
+}
+
+.modal-game-over {
+    width: 250px;
+
+}
+
+#game-over-modal {
+    padding: 10px;
+}
+
+.grass-border {
+    width: 100%;
+    height: 345px;
+    background: url('../images/mario-walk-mustache-grass-wallpaper-preview.PNG') repeat-x;
+    background-size: contain;
+    position: relative;
+    top: -1px;
+    z-index: 1000;
+    animation: grass-slide 1s linear infinite;
+}
+
+.grass-slide-stop {
+    animation: none;
+}
+
+.clouds-stop {
+    animation: none;
+}
+
+@keyframes background-slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -1000px 0;
+    }
+}
+
+@keyframes grass-slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -1000px 0;
+    }
+}
+
+@font-face {
+    font-family: 'FontMario';
+    src: url(../fonts/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf) format('truetype');
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes plant-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes bullet-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    70% {
+        bottom: 160px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes bush-animation {
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes tree-animation {
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes luigi-animation {
+    from {
+        left: -300px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes koopa-animation {
+    from {
+        left: -300px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
