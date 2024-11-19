@@ -83,12 +83,6 @@
     animation: jump 500ms ease-out;
 }
 
-.clouds {
-    margin-top: 70px;
-    position: absolute;
-    width: 600px;
-    animation: clouds-animation 20s infinite linear;
-}
 
 .bush {
     bottom: 0px;
@@ -179,9 +173,7 @@
     animation: none;
 }
 
-.clouds-stop {
-    animation: none;
-}
+
 
 @keyframes background-slide {
     from {
@@ -261,16 +253,6 @@
 
     100% {
         bottom: 0;
-    }
-}
-
-@keyframes clouds-animation {
-    from {
-        right: -550px;
-    }
-
-    to {
-        right: 100%;
     }
 }
 

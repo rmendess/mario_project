@@ -4,7 +4,6 @@ const scoreElement = document.querySelector('.score');
 const modal = document.getElementById('game-over-modal');
 const restartButton = document.getElementById('restart-button');
 const grassBorder = document.querySelector('.grass-border');
-const clouds = document.querySelector('.clouds');
 const bush = document.querySelector('.bush');
 const luigi = document.querySelector('.luigi');
 const tree = document.querySelector('.tree');
@@ -115,7 +114,6 @@ const loop = setInterval(() => {
 
   const pipePosition = pipe.offsetLeft;
   const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-  const cloudsPosition = clouds.offsetLeft;
   const bushPosition = bush.offsetLeft;
   const luigiPosition = luigi.offsetLeft;
   const treePosition = tree.offsetLeft;
@@ -150,9 +148,6 @@ const loop = setInterval(() => {
 
     grassBorder.classList.remove('grass-slide');
     grassBorder.classList.add('grass-slide-stop');
-
-    clouds.style.animation = 'none';
-    clouds.style.left = `${cloudsPosition}px`;
 
     bush.style.animation = 'none';
     bush.style.left = `${bushPosition}px`;
@@ -210,9 +205,6 @@ const loop = setInterval(() => {
     grassBorder.classList.remove('grass-slide');
     grassBorder.classList.add('grass-slide-stop');
 
-    clouds.style.animation = 'none';
-    clouds.style.left = `${cloudsPosition}px`;
-
     bush.style.animation = 'none';
     bush.style.left = `${bushPosition}px`;
 
@@ -267,9 +259,6 @@ const loop = setInterval(() => {
     grassBorder.classList.remove('grass-slide');
     grassBorder.classList.add('grass-slide-stop');
 
-    clouds.style.animation = 'none';
-    clouds.style.left = `${cloudsPosition}px`;
-
     bush.style.animation = 'none';
     bush.style.left = `${bushPosition}px`;
 
@@ -310,7 +299,6 @@ startLuigiAnimation();
 startKoopaAnimation();
 tree.classList.add('tree-animation');
 bush.classList.add('bush-animation');
-clouds.classList.add('clouds-animation');
 grassBorder.classList.add('grass-slide');
 document.addEventListener('keydown', jump);
 restartButton.addEventListener('click', restartGame);
